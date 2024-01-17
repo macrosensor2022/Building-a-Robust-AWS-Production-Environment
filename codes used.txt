@@ -1,0 +1,29 @@
+
+
+1) Securely copy my private key and website files  from windows machine to bastian host 
+scp -r -i C:\Users\Vinay\Downloads\my_key.pem "path \to \(website folder)" ubuntu@(public ip):/home/ubuntu/
+
+
+2)SSH to my public subnet
+
+ssh -i path\to \my_key.pem ubuntu@(public ip)
+
+
+
+3) copy images from my bastion host to my private subnet
+
+scp -i /path/to/private/key.pem /local/path/to/images/* ubuntu@private-subnet-ip:/path/on/private/machine/
+
+
+
+
+4)SSH to private subnet:
+
+ssh -i my_key.pem ubuntu@(private ip address)
+
+
+
+5)Start the python http server at the port you want to run:
+
+python3 -m http.server 8000 ---> (8000 port used for my purpose you can use any port)
+
